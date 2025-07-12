@@ -424,4 +424,8 @@ if __name__ == '__main__':
     startup_test = face_service.test_camera_advanced()
     print(f"Camera test result: {startup_test}")
     
-    app.run(debug=True, port=5000)
+  app.run(
+    host=os.getenv('PYTHON_HOST', '0.0.0.0'),
+    port=int(os.getenv('PYTHON_PORT', 5000)),
+    debug=True
+)
